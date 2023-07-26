@@ -1,0 +1,54 @@
+<!-- modificar-libro-modal.component.html -->
+
+<h2>Nombres de campos a modificar:</h2>
+<ul>
+  <!-- Recorrer el array camposAModificar y mostrar los nombres -->
+  <li *ngFor="let campo of camposAModificar">{{ campo.nombre }}</li>
+</ul>
+
+<!-- Formulario para modificar el libro -->
+<div class="mat-elevation-z8" style="display: flex; flex-direction: column; align-items: center;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div style="margin: 16px;">
+        <mat-form-field>
+          <mat-label>Título:</mat-label>
+          <input matInput type="text" name="nombre" [(ngModel)]="libro.nombre" />
+        </mat-form-field>
+      </div>
+      <div style="margin: 16px;">
+        <mat-form-field>
+          <mat-label>Autor:</mat-label>
+          <select matNativeControl name="autor" [(ngModel)]="libro.autor">
+            <option *ngFor="let autor of autores" [value]="autor">{{ autor }}</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+  
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div style="margin: 16px;">
+        <mat-form-field>
+          <mat-label>Categoría:</mat-label>
+          <select matNativeControl name="categoria" [(ngModel)]="libro.categoria">
+            <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div style="margin: 16px;">
+        <mat-form-field>
+          <mat-label>Precio:</mat-label>
+          <input matInput type="number" name="precio" [(ngModel)]="libro.precio" />
+        </mat-form-field>
+      </div>
+    </div>
+
+  </div> <!-- Cerrar el div que contiene el formulario -->
+
+  <!-- Botones -->
+  <div style="display: flex; justify-content: center;">
+    <button type="submit" class="btn btn-success" (click)="guardarCambios()">Guardar Cambios</button>
+    <button type="submit" class="btn btn-danger" (click)="cancelarModificacion()">Cancelar</button> <!-- Botón Cancelar agregado -->
+  </div>
+</div>

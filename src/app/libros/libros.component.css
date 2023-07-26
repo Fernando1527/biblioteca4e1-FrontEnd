@@ -1,0 +1,44 @@
+/* Aumentar el tamaño y poner en negrita los títulos de la tabla */
+.table thead th {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos para el contenedor principal */
+.container-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Estilos para el formulario de agregar un libro */
+.agregar-libro-form {
+  flex: 1;
+  margin: 16px;
+  max-width: 500px;
+}
+
+.agregar-libro-form mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Estilos para la tabla de libros */
+.tabla-libros {
+  flex: 1;
+  margin: 16px;
+  max-width: 1000px;
+}
+
+/* Estilos para el espacio entre el formulario y la tabla */
+.spacer {
+  flex-basis: 100%;
+  height: 16px;
+  max-height: 16px;
+}
+
+/* Estilos para los botones de acción */
+.action-buttons button {
+  margin-right: 8px;
+}
